@@ -37,7 +37,7 @@ parser = argparse.ArgumentParser(description='Training')
 parser.add_argument('--gpu_ids',default='0', type=str,help='gpu_ids: e.g. 0  0,1,2  0,2')
 parser.add_argument('--name',default='AEN', type=str, help='output model name')
 parser.add_argument('--data_dir', default='E:\\University-Release\\train', type=str, help='training dir path')
-parser.add_argument('--checkpoint', default='85.12 87.21 89.30 84.17 ELG.pth', type=str, help='one stage model path')
+parser.add_argument('--checkpoint', default='.pth', type=str, help='one stage model path')
 parser.add_argument('--batchsize', default=7, type=int, help='batchsize') # batch is the number of T
 parser.add_argument('--h', default=256, type=int, help='height')
 parser.add_argument('--w', default=256, type=int, help='width')
