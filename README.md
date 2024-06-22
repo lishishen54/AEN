@@ -1,6 +1,6 @@
 # AEN
 
-Citation
+## Citation
 If you find this code or our paper useful in your research, please cite our work:
 @article{liu2024adaptive,
   title={Adaptive Global Embedding Learning: A Two-Stage Framework for UAV-View Geo-Localization},
