@@ -19,24 +19,25 @@ import scipy.io
 parser = argparse.ArgumentParser(description='Training')
 parser.add_argument('--gpu_ids',default='0', type=str,help='gpu_ids: e.g. 0  0,1,2  0,2')
 parser.add_argument('--name', default='AEN', type=str, help='name')
-# parser.add_argument('--test_dir',default='E:\SUES-ALL\Testing\\300',type=str, help='./test_data')
 parser.add_argument('--test_dir',default='E:\\University-Release\\test',type=str, help='./test_data')
-parser.add_argument('--checkpoint', default='85.12 87.21 89.30 84.17 ELG.pth', type=str, help='save model path')
+parser.add_argument('--checkpoint', default='.pth', type=str, help='one stage path')
 parser.add_argument('--batchsize', default=128, type=int, help='batchsize')
 parser.add_argument('--checkpoint_CA', default='003', type=str, help='CA name')
 parser.add_argument('--h', default=256, type=int, help='height')
 parser.add_argument('--w', default=256, type=int, help='width')
 parser.add_argument('--ms',default='1', type=str,help='multiple_scale: e.g. 1 1,1.1  1,1.1,1.2')
 parser.add_argument('--test_mode',default='2', type=int,help='1:satellite->drone    2:drone->satellite')
-parser.add_argument('--num_worker',default=2, type=int,help='1:drone->satellite   2:satellite->drone')
+parser.add_argument('--num_worker',default=8, type=int,help='')
 parser.add_argument('--pad', default=0, type=int, help='')
+
+parser.add_argument('--block',default=2, type=int,help='part')
 
 opt = parser.parse_args()
 
 
 opt.views = 2
 opt.nclasses = 701
-opt.block = 2
+opt.block = opt.block + 1
 test_dir = opt.test_dir
 data_dir = test_dir
 
